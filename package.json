@@ -10,9 +10,9 @@
   "author": "",
   "license": "Apache 2.0",
   "dependencies": {
-    "body-parser": "^1.12.3",
-    "cors": "^2.6.0",
-    "express": "^4.12.3",
-    "mongoose": "^4.0.2"
+    "body-parser": "^1.13.1",
+    "cors": "^2.7.1",
+    "express": "^4.13.0",
+    "mongoose": "^4.0.6"
   }
 }

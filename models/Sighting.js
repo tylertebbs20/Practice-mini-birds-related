@@ -1,24 +1,13 @@
 var mongoose = require('mongoose');
+var birdSchema = require('./bird.js');
+var userSchema = require('./user.js');
 
 var sightingSchema = new mongoose.Schema({
-  name: { type: String, lowercase: true },
-  order: { type: String, lowercase: true, maxlength: 20 },
-  status: {
-    type: String,
-    lowercase: true,
-    enum: [
-      'extinct',
-      'extinct in the wild',
-      'critically endangered',
-      'endangered',
-      'vulnerable',
-      'near threatened',
-      'conservation dependent',
-      'least concern'
-    ]
-  },
+  
+  user: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+  bird: [birdSchema],
   confirmed: { type: Boolean, default: false },
-  numberSeen: { type: Number, min: 1 }
+  numberSeen: { type: Number, min: 1 },
 });
 
 

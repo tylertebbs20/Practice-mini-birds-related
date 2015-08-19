@@ -1,4 +1,4 @@
-var Sighting = require('../models/Sighting');
+var Sighting = require('./../models/Sighting');
 
 module.exports = {
   create: function(req, res) {
@@ -12,6 +12,7 @@ module.exports = {
   read: function(req, res) {
     console.log('req.query: ', req.query);
     Sighting.find(req.query)
+    // .populate('user')
     .exec(function(err, result) {
       if (err) return res.status(500).send(err);
       res.send(result);
